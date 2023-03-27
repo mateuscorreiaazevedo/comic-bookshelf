@@ -4,7 +4,12 @@ module.exports = {
   mode: 'jit',
   content: ['./src/**/*.tsx'],
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        primary: '#E23636',
+        secondary: '#518CCA'
+      }
+    }
   },
   plugins: []
 }
