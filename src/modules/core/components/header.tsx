@@ -10,7 +10,7 @@ import { useTheme } from '../contexts/theme-context'
 
 export const Header = () => {
   const { scrollY } = useScroll()
-  const background = useTransform(scrollY, [100, 450], ['rgba(10,10,10,0.2)', '#F0141E'])
+  const background = useTransform(scrollY, [100, 450], ['rgba(10,10,10,0.01)', '#F0141E'])
   const { handleTheme, isLight } = useTheme()
 
   return (

@@ -5,7 +5,7 @@ class ComicService extends Service {
     const response = await this.request<ResponseComics>({
       url: '/comics',
       params: {
-        offset
+        ...(offset && { offset })
       }
     })
 
@@ -14,6 +14,14 @@ class ComicService extends Service {
         return response.body?.data
       case 401:
         throw new Error(response.body?.message)
+      case 403:
+        throw new Error(response.body?.message)
+      case 405:
+        throw new Error(response.body?.message)
+      case 409:
+        throw new Error(response.body?.message)
+      default:
+        throw new Error('Erro no Sistema')
     }
   }
 }

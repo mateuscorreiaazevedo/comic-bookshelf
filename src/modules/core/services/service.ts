@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios'
-import { coreConstants as c, getTimestamp } from '..'
 import { md5Helper } from '../utils/md5-helper'
+import { coreConstants as c } from '..'
 
 type HttpRequest = {
   url: string
@@ -15,7 +15,7 @@ type HttpResponse<T> = {
   body?: T
 }
 
-const ts = getTimestamp()
+const ts = new Date().getTime().toString()
 const hash = md5Helper
 
 export class Service {
@@ -38,7 +38,7 @@ export class Service {
         data: body,
         params: {
           ts,
-          apikey: c.apiKey!,
+          apikey: c.publicKey as string || c.privateKey as string,
           hash,
           ...params
         },

@@ -11,7 +11,7 @@ type ComicResponse = {
     title: string
   }
   images: {
-    paths: string
+    path: string
     extension: string
   }[]
   format: string
