@@ -1,5 +1,5 @@
 export default {
   baseUrl: process.env.NEXT_PUBLIC_API_URL,
-  apiKey: process.env.NEXT_PUBLIC_API_KEY,
-  apiPrivate: process.env.NEXT_PUBLIC_API_PRIVATE
+  publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
+  privateKey: process.env.NEXT_PUBLIC_PRIVATE_KEY
 }
