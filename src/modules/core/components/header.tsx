@@ -36,7 +36,7 @@ export const Header = () => {
         </label>
         <Popover.Root>
           <Popover.Trigger>
-            <HiMenuAlt3 className='text-3xl'/>
+            <HiMenuAlt3 className='text-3xl fill-zinc-900'/>
           </Popover.Trigger>
           <PopoverUi>
             <ul>

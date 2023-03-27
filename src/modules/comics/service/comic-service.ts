@@ -1,8 +1,8 @@
-import { Service } from '@/modules/core'
+import { service } from '@/modules/core'
 
-class ComicService extends Service {
-  async getAll (offset = 0) {
-    const response = await this.request<ResponseComics>({
+class ComicService {
+  async getAll (offset?: number) {
+    const response = await service.request<ResponseComics>({
       url: '/comics',
       params: {
         ...(offset && { offset })

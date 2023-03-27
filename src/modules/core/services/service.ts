@@ -1,5 +1,5 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios'
-import { md5Helper } from '../utils/md5-helper'
+import CryptoJS from 'crypto-js'
 import { coreConstants as c } from '..'
 
 type HttpRequest = {
@@ -16,12 +16,12 @@ type HttpResponse<T> = {
 }
 
 const ts = new Date().getTime().toString()
-const hash = md5Helper
+const hash = CryptoJS.MD5(ts + c.privateKey! + c.publicKey!).toString()
 
-export class Service {
+class Service {
   private api: AxiosInstance
 
-  constructor (private readonly baseURL: string = c.baseUrl!) {
+  constructor (private readonly baseURL: string = c.baseUrl) {
     this.api = axios.create({
       baseURL
     })
@@ -38,7 +38,7 @@ export class Service {
         data: body,
         params: {
           ts,
-          apikey: c.publicKey as string || c.privateKey as string,
+          apikey: c.publicKey as string,
           hash,
           ...params
         },
@@ -57,3 +57,5 @@ export class Service {
     }
   }
 }
+
+export const service = new Service()
