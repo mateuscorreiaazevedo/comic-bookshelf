@@ -1,11 +1,12 @@
 import { service } from '@/modules/core'
 
 class ComicService {
-  async getAll (offset?: number) {
+  async getAll (offset?: number, title?: string) {
     const response = await service.request<ResponseComics>({
       url: '/comics',
       params: {
-        ...(offset && { offset })
+        ...(offset && { offset }),
+        ...(title && { title })
       }
     })
 

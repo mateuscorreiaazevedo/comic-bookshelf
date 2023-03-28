@@ -4,7 +4,7 @@ import React from 'react'
 
 interface Props {
   view: string
-  toggleView: (value: string) => void
+  toggleView: (value: 'grid' | 'list') => void
 }
 
 export function View ({ toggleView, view }: Props) {
