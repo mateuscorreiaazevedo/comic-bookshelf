@@ -1,6 +1,7 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import { Modal } from '@/main/ui'
 import React from 'react'
+import { CardModal } from './card-modal'
 
 export function CardList (props: ComicResponse) {
   return (
@@ -19,12 +20,7 @@ export function CardList (props: ComicResponse) {
         </div>
       </Dialog.Trigger>
       <Modal>
-        <h1>{props.title}</h1>
-        <img
-          className="w-80 object-contain"
-          src={`${props.thumbnail.path}.${props.thumbnail.extension}`}
-          alt={props.thumbnail.title}
-        />
+       <CardModal {...props} />
       </Modal>
     </Dialog.Root>
   )
