@@ -6,7 +6,7 @@ export function CardList (props: ComicResponse) {
   return (
     <Dialog.Root>
       <Dialog.Trigger>
-        <div className="flex shadow-md items-start justify-start bg-red-200 dark:bg-zinc-700 p-4 w-full rounded-md gap-2">
+        <div className="flex shadow-md items-start justify-start bg-red-100 dark:bg-zinc-700 p-4 w-full rounded-md gap-2 hover:scale-105 transition-all duration-300 dark:hover:bg-zinc-600 hover:bg-red-200">
           <img
             src={`${props.thumbnail.path}.${props.thumbnail.extension}`}
             alt={props.thumbnail.title}
