@@ -1,6 +1,5 @@
-import { BsSun, BsMoon, BsGithub, BsLinkedin, BsInstagram, BsCodeSlash } from 'react-icons/bs'
+import { BsSun, BsMoon, BsGithub, BsLinkedin, BsInstagram, BsCodeSlash, BsThreeDotsVertical, BsSearch } from 'react-icons/bs'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { HiSearch, HiMenuAlt3 } from 'react-icons/hi'
 import { useTheme } from '../contexts/theme-context'
 import * as Popover from '@radix-ui/react-popover'
 import { ItemNav, PopoverUi } from '@/main/ui'
@@ -30,13 +29,13 @@ export const Header = () => {
             className="w-16"
           />
         </Link>
-        <nav className="flex gap-4 text-zinc-900">
+        <nav className="flex gap-4 text-zinc-900 dark:text-teal-50 items-center">
           <Link href="/search" className="text-3xl">
-            <HiSearch />
+            <BsSearch />
           </Link>
           <Popover.Root>
             <Popover.Trigger>
-              <HiMenuAlt3 className="text-3xl" />
+              <BsThreeDotsVertical className="text-3xl" />
             </Popover.Trigger>
             <PopoverUi>
               <ul>
