@@ -31,6 +31,7 @@ type ComicResponse = {
     text: string
     type: string
   }[]
+  modified: Date
 }
 
 type DataResponse = {

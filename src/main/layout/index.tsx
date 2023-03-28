@@ -11,7 +11,6 @@ export const Layout = ({ children }: {children: React.ReactNode}) => {
       <div>
         <Header />
         <main>
-
           {children}
         </main>
         <Footer />
