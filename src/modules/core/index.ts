@@ -1,6 +1,7 @@
 export { default as coreConstants } from './constants/core'
 export * from './utils/notification-helper'
 export * from './contexts/theme-context'
+export * from './components/header'
 export * from './services/service'
 export * from './hooks/use-cookie'
-export * from './components/header'
+export * from './hooks/use-view'

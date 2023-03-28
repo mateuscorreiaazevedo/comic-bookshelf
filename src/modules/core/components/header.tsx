@@ -10,14 +10,14 @@ import { useTheme } from '../contexts/theme-context'
 
 export const Header = () => {
   const { scrollY } = useScroll()
-  const background = useTransform(scrollY, [100, 450], ['rgba(10,10,10,0.01)', '#F0141E'])
+  const background = useTransform(scrollY, [100, 500], ['rgba(10,10,10,0)', '#F0141E'])
   const { handleTheme, isLight } = useTheme()
 
   return (
     <motion.header
       style={{ background }}
       transition={{ duration: 2.6 }}
-      className="w-full flex items-center backdrop-blur-sm h-20 fixed top-0 text-white shadow-md"
+      className="w-full flex items-center h-20 fixed top-0 text-white"
     >
       <div className="container mx-auto flex gap-10 items-center justify-between">
         <Link href="/">
