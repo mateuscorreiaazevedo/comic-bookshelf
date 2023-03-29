@@ -41,16 +41,3 @@ type DataResponse = {
   results: ComicResponse[]
   total: number
 }
-
-type ResponseComics = {
-  code: number
-  copyright: string
-  data: DataResponse
-  etag: string
-  status: string
-}
-
-type ErrorComics = {
-  code: string
-  message: string
-}

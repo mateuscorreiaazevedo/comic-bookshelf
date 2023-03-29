@@ -2,7 +2,7 @@ import { service } from '@/modules/core'
 
 class ComicService {
   async getAll (offset?: number, title?: string) {
-    const response = await service.request<ResponseComics>({
+    const response = await service.request<{data: DataResponse, message?: string}>({
       url: '/comics',
       params: {
         ...(offset && { offset }),
@@ -27,7 +27,7 @@ class ComicService {
   }
 
   async getComic (id: string) {
-    const response = await service.request<ResponseComics>({
+    const response = await service.request<{data: DataResponse, message?: string}>({
       url: `/comics/${id}`,
     })
 
